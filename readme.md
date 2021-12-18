@@ -6,7 +6,7 @@ For a one-click deploy of Kibana on Heroku, see [omc/heroku-kibana](https://gith
 
 ## Compatibility
 
-Tested against Kibana 4.1.2.
+Tested against Kibana 7.16.1.
 
 ## Usage
 
