@@ -67,5 +67,8 @@ $extract $CACHE_DIR/$KIBANA_PACKAGE
 echo "-----> Configuring ELASTICSEARCH_URL"
 echo "elasticsearch.hosts: [\"$ELASTICSEARCH_URL\"]" >> $KIBANA_DIR/config/kibana.yml
 
+echo "-----> Configuring remote network access"
+echo "server.host: \"0\"" >> $KIBANA_DIR/config/kibana.yml
+
 echo "Exporting PATH" | indent
 echo 'export PATH="$PATH:'${KIBANA_DIR##*/}'/bin"' > $INIT_SCRIPT
