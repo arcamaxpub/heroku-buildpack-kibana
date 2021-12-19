@@ -71,7 +71,7 @@ echo "-----> Configuring remote network access"
 echo "server.host: \"0\"" >> $KIBANA_DIR/config/kibana.yml
 
 echo "-----> Configuring PUBLIC_BASE_URL"
-echo "server.publicBaseUrl:: \"$PUBLIC_BASE_URL\"" >> $KIBANA_DIR/config/kibana.yml
+echo "server.publicBaseUrl: \"$PUBLIC_BASE_URL\"" >> $KIBANA_DIR/config/kibana.yml
 
 echo "Exporting PATH" | indent
 echo 'export PATH="$PATH:'${KIBANA_DIR##*/}'/bin"' > $INIT_SCRIPT
