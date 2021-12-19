@@ -73,14 +73,14 @@ echo "server.host: \"0.0.0.0\"" >> $KIBANA_DIR/config/kibana.yml
 echo "-----> Configuring PUBLIC_BASE_URL"
 echo "server.publicBaseUrl: \"$PUBLIC_BASE_URL\"" >> $KIBANA_DIR/config/kibana.yml
 
-echo "-----> Configuring auth"
+echo "-----> Configuring security"
 echo "elasticsearch.username: \"kibana_system\"" >> $KIBANA_DIR/config/kibana.yml
 echo "elasticsearch.password: \"$KIBANA_SYSTEM_PASS\"" >> $KIBANA_DIR/config/kibana.yml
-
-echo "-----> Configuring encryption keys"
 echo "xpack.encryptedSavedObjects.encryptionKey: $(openssl rand -hex 32)" >> $KIBANA_DIR/config/kibana.yml
 echo "xpack.reporting.encryptionKey: $(openssl rand -hex 32)" >> $KIBANA_DIR/config/kibana.yml
 echo "xpack.security.encryptionKey: $(openssl rand -hex 32)" >> $KIBANA_DIR/config/kibana.yml
+echo "xpack.security.session.idleTimeout: \"1h\"" >> $KIBANA_DIR/config/kibana.yml
+echo "xpack.security.session.lifespan: \"30d\"" >> $KIBANA_DIR/config/kibana.yml
 
 echo "Exporting PATH" | indent
 echo 'export PATH="$PATH:'${KIBANA_DIR##*/}'/bin"' > $INIT_SCRIPT
